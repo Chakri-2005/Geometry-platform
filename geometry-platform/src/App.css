@@ -1,0 +1,13 @@
+.app {
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  color: #007acc;
+}
+
+p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}

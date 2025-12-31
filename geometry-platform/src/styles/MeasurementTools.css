@@ -1,0 +1,328 @@
+.measurement-tools {
+  width: 100%;
+}
+
+.tools-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+  min-height: 500px;
+}
+
+.tools-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  background: var(--light);
+  border: 2px solid var(--light-gray);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.tool-item:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.tool-item.active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+}
+
+.tool-item i {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.tool-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.tool-desc {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.tools-main {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.tool-content h3 {
+  margin-bottom: 20px;
+  color: var(--secondary);
+  font-size: 1.4rem;
+}
+
+/* Ruler Styles */
+.ruler-visual {
+  background: white;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.ruler {
+  display: flex;
+  height: 60px;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  position: relative;
+}
+
+.ruler-mark {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.mark-line {
+  width: 1px;
+  height: 20px;
+  background: #666;
+}
+
+.mark-number {
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.measurement-line {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  right: 150px;
+  height: 2px;
+  background: var(--primary);
+}
+
+.measurement-line:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -4px;
+  width: 10px;
+  height: 10px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+.measurement-line:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -4px;
+  width: 10px;
+  height: 10px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+.measurement-inputs {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.measurement-inputs .input-group {
+  flex: 1;
+}
+
+/* Protractor Styles */
+.protractor-visual {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.protractor {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid var(--light-gray);
+  position: relative;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 45deg,
+    var(--primary) 45deg 90deg,
+    transparent 90deg
+  );
+}
+
+.angle-line {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 2px;
+  height: 45%;
+  background: var(--dark);
+  transform-origin: bottom center;
+}
+
+.base-line {
+  transform: rotate(-45deg);
+}
+
+.moving-line {
+  background: var(--primary);
+  transform: rotate(0deg);
+}
+
+.angle-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.angle-controls {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.angle-controls .input-group {
+  flex: 1;
+}
+
+/* Calculator Styles */
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.shape-calculator {
+  background: var(--light);
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid var(--light-gray);
+}
+
+.shape-calculator h4 {
+  margin-bottom: 10px;
+  color: var(--secondary);
+  font-size: 1.2rem;
+}
+
+.formula {
+  font-family: monospace;
+  background: white;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.perimeter {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 15px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.calculate-btn {
+  width: 100%;
+}
+
+.measurements-history {
+  border-top: 1px solid var(--light-gray);
+  padding-top: 20px;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.history-header h4 {
+  color: var(--secondary);
+  margin: 0;
+}
+
+.measurements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.measurement-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+}
+
+.measurement-shape {
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--secondary);
+  min-width: 100px;
+}
+
+.measurement-values {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  margin: 0 15px;
+}
+
+.measurement-time {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+@media (max-width: 1024px) {
+  .tools-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .tools-sidebar {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  
+  .tool-item {
+    min-width: 180px;
+  }
+  
+  .calculator-grid {
+    grid-template-columns: 1fr;
+  }
+}
